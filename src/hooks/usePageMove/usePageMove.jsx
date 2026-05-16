@@ -10,13 +10,29 @@ function usePageMove() {
         });
     };
 
-    // const moveToInventory = () => {
-    //     navigate("/inventory");
-    // };
+    const moveToBattle = () => {
+        navigate("/battle", {
+            replace: true,
+        });
+    }
+
+    const moveToInventory = () => {
+        navigate("/inventory", {
+            replace: true,
+        });
+    };
+
+    const moveToShop = () => {
+        navigate("/shop", {
+            replace: true,
+        });
+    };
 
     return {
         moveToLobby,
-        // moveToInventory,
+        moveToBattle,
+        moveToInventory,
+        moveToShop,
     };
 }
 

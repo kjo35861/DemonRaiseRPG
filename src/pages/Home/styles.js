@@ -7,7 +7,7 @@ const blink = keyframes`
         opacity: 1;
     }
     50% {
-        opacity: 0.2;
+        opacity: 0.4;
     }
     100% {
         opacity: 1;
@@ -36,7 +36,7 @@ export const logo = css`
 export const pressStart = css`
     font-size: 50px;
     font-weight: 800;
-    color: #797979;
+    color: #b9b9b9;
     animation: ${blink} 1.5s infinite;
     text-shadow: 5px 5px 5px #5f5f5fb6;
     cursor: default;

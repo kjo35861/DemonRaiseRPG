@@ -1,10 +1,66 @@
 import * as s from "./styles";
+import { GrMoney } from "react-icons/gr";
+import { ImExit } from "react-icons/im";
+import { goldIcon } from "../../assets/images";
+import usePageMove from "../../hooks/usePageMove/usePageMove";
 
 function Lobby() {
+    const {moveToInventory, moveToBattle, moveToShop } = usePageMove();
+
+
+
 
     return (
         <>
-            <div css={s.layout}>가나다라마바사아</div>
+            <div css={s.layout}>
+                <div css={s.toplayout}>
+                    <div css={s.profile}>유저이름</div>
+                    <div css={s.logo}></div>
+                    <div css={s.money}>
+                        <div css={s.gold}>
+                            <div className="goldIcon"></div>
+                            <div>G</div>
+                        </div>
+                        <div css={s.soul}>
+                            <div className="soulIcon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div css={s.bottomlayout}>
+                    <div css={s.infolayout}>Info
+                        <div css={s.info}>어쩌구 저쩌구</div>
+                    </div>
+                    <div css={s.buttons}>
+                        <div css={s.buttonstop}>
+                            <div css={s.classchange}>
+                                <span>전</span>
+                                <span>직</span>
+                            </div>
+                            <div css={s.noset}></div>
+                            <div css={s.lord}>
+                                <span>군</span>
+                                <span>주</span>
+                                <span>토</span>
+                                <span>벌</span>
+                            </div>
+                            <div css={s.buttonstopright}>
+                                <div css={s.battle} onClick={moveToBattle}>
+                                    <span>사</span>
+                                    <span>냥</span>
+                                </div>
+                                <div css={s.inventory}
+                                onClick={moveToInventory}>인벤토리</div>
+                            </div>
+                        </div>
+                        <div css={s.buttonsbottom}>
+                            <div css={s.shop}>상 점</div>
+                            <div css={s.quit}><ImExit /></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </>
     )
 }
