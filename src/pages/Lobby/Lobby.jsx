@@ -3,33 +3,50 @@ import { GrMoney } from "react-icons/gr";
 import { ImExit } from "react-icons/im";
 import { goldIcon } from "../../assets/images";
 import usePageMove from "../../hooks/usePageMove/usePageMove";
+import usePlayer from "../../hooks/usePlayer/usePlayer";
+import PlayerInfos from "./InfoList/PlayerInfos";
+import { useEffect } from "react";
+
 
 function Lobby() {
-    const {moveToInventory, moveToBattle, moveToShop } = usePageMove();
+    const { moveToInventory, moveToBattle, moveToShop } = usePageMove();
+    const {player, setPlayer} = usePlayer();
 
 
+    const handleClick = () => {
+        setPlayer(prev => ({
+            ...prev,
+            hp: prev.maxhp,
+        }))
+    }
 
+useEffect(() => {
+    
+}, [player])
 
     return (
         <>
             <div css={s.layout}>
                 <div css={s.toplayout}>
-                    <div css={s.profile}>유저이름</div>
+                    <div css={s.profile}>{player.username}</div>
                     <div css={s.logo}></div>
                     <div css={s.money}>
                         <div css={s.gold}>
                             <div className="goldIcon"></div>
-                            <div>G</div>
+                            <div>{player.money}G</div>
                         </div>
                         <div css={s.soul}>
                             <div className="soulIcon"></div>
-                            <div></div>
+                            <div>{player.souls}</div>
                         </div>
                     </div>
                 </div>
                 <div css={s.bottomlayout}>
-                    <div css={s.infolayout}>Info
-                        <div css={s.info}>어쩌구 저쩌구</div>
+                    <div css={s.infolayout}>
+                        <div>Info</div>
+                        <ul css={s.infoList}>
+                            <PlayerInfos />
+                        </ul>
                     </div>
                     <div css={s.buttons}>
                         <div css={s.buttonstop}>
@@ -50,11 +67,12 @@ function Lobby() {
                                     <span>냥</span>
                                 </div>
                                 <div css={s.inventory}
-                                onClick={moveToInventory}>인벤토리</div>
+                                    onClick={moveToInventory}>인벤토리</div>
                             </div>
                         </div>
                         <div css={s.buttonsbottom}>
                             <div css={s.shop}>상 점</div>
+                            <div css={s.rest} onClick={handleClick}>휴 식</div>
                             <div css={s.quit}><ImExit /></div>
                         </div>
                     </div>

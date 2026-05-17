@@ -91,7 +91,8 @@ export const soul = css`
 export const bottomlayout = css`
     display: flex;
     gap: 20px;
-    flex-grow: 1;
+    width: 1740px;
+    height: 640px;
     padding: 15px;
     border-radius: 4px;
     border: 2px solid #ff6b4a88;
@@ -105,17 +106,54 @@ export const bottomlayout = css`
 `
 
 export const infolayout = css`
+    display: flex;
+    flex-direction: column;
     width: 700px;
+    height: 610px;
     background-color: rgba(233, 212, 156, 0.05);
     border-radius: 8px;
     border: 1px solid #ff6b4a3d;
     /* outline: 5px solid #7a1c1c; */
     /* box-shadow: inset 0 0 10px #dbdbdb88; */
-    padding: 20px 30px;
+    padding: 10px 30px;
+    
 `
 
-export const info = css`
-    border-top: 1px solid #dbdbdb88 ;
+export const infoList = css`
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #dbdbdb;
+    gap: 20px;
+    margin: 0;
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    color: #dbdbdb;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #12090988;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #884c4c88;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #64373788;
+    }
+
+    & > li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 `
 
 export const buttons = css`
@@ -158,6 +196,7 @@ export const classchange = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 110%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -165,7 +204,7 @@ export const classchange = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(0.7);
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
     }
 `
 
@@ -188,6 +227,7 @@ export const lord = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 140%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -195,7 +235,7 @@ export const lord = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(0.7);
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
     }
 `
 
@@ -212,6 +252,7 @@ export const battle = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 105%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -219,7 +260,7 @@ export const battle = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(0.7);
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
     }
 `
 
@@ -235,6 +276,7 @@ export const inventory = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -242,7 +284,7 @@ export const inventory = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(0.7);
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
     }
 `
 export const shop = css`
@@ -257,6 +299,7 @@ export const shop = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -264,9 +307,14 @@ export const shop = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(0.7);
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
     }
 `
+
+export const rest = css`
+
+`
+
 export const quit = css`
     display: flex;
     justify-content: center;
@@ -279,7 +327,7 @@ export const quit = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    filter: brightness(1.3);
+    filter: brightness(1.3) drop-shadow(5px 5px 5px #00000099);
 
     & > svg {
         color: #7a1c1c;
@@ -291,6 +339,7 @@ export const quit = css`
     
     &:active {
         scale: 95%;
-        filter: brightness(1);
+        filter: brightness(1) drop-shadow(5px 5px 5px #00000099);
     }
 `
+

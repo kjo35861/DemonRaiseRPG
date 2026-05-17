@@ -12,6 +12,8 @@ import lobbyBG from "./background/LobbyBackground.png"
 import goldIcon from "./icon/GoldIcon.png"
 import soulIcon from "./icon/SoulIcon.png"
 
+import actionController from "./button/ActionController.png"
+import actionButton from "./button/ActionButton.png"
 export {
     logoImg,
 
@@ -26,4 +28,8 @@ export {
 
     goldIcon,
     soulIcon,
+
+    actionButton,
+    actionController,
+
 };

@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
+import usePlayer from "../usePlayer/usePlayer";
 
 function usePageMove() {
+    const { player } = usePlayer();
 
     const navigate = useNavigate();
 
@@ -11,9 +13,13 @@ function usePageMove() {
     };
 
     const moveToBattle = () => {
-        navigate("/battle", {
-            replace: true,
-        });
+        if (player.hp > 0) {
+            navigate("/battle", {
+                replace: true,
+            });
+        } else {
+            alert("체력이 0입니다.")
+        }
     }
 
     const moveToInventory = () => {
@@ -28,11 +34,18 @@ function usePageMove() {
         });
     };
 
+    const moveToReward = (result) => {
+        navigate(`/reward/${result}`, {
+            replace: true,
+        });
+    };
+
     return {
         moveToLobby,
         moveToBattle,
         moveToInventory,
         moveToShop,
+        moveToReward,
     };
 }
 
