@@ -1,20 +1,20 @@
-import { useRecoilValue } from "recoil";
 import usePageMove from "../../hooks/usePageMove/usePageMove";
 import * as s from "./styles";
-import { finalAttackState } from "../../recoil/selectors/playerSelector";
 import { monsters } from "../../contents/monster";
 import { getRandomMonster } from "../../utils/getRandomMonster";
 import { useEffect, useState } from "react";
 import usePlayer from "../../hooks/usePlayer/usePlayer";
 import useEnemy from "../../hooks/useEnemy/useEnemy";
+import { calcFinalAttack } from "../../utils/calcFinalAttack";
 
 
 function Battle() {
     const { moveToLobby, moveToReward } = usePageMove();
-    const finalAttack = useRecoilValue(finalAttackState);
 
     const { player, damagePlayer } = usePlayer();
     const { enemy, setEnemy, damageEnemy } = useEnemy();
+
+    const finalAttack = calcFinalAttack(player);
 
 
     const handleActionsOnClick = (e) => {
@@ -37,7 +37,9 @@ function Battle() {
     }
 
     useEffect(() => {
-        setEnemy(getRandomMonster());
+        if (!enemy) {
+            setEnemy(getRandomMonster())
+        }
     }, [])
 
     useEffect(() => {
@@ -45,10 +47,10 @@ function Battle() {
             moveToReward("lose");
         }
 
-        if (enemy.hp === 0) {
+        if (enemy?.hp === 0) {
             moveToReward("win");
         }
-    }, [player.hp, enemy.hp])
+    }, [player.hp, enemy?.hp])
 
     return (
         <>
@@ -59,7 +61,7 @@ function Battle() {
                         {player.username}
                         <div css={s.userinfo}>
                             <div>{player.hp} / {player.maxhp}</div>
-                            <div>{finalAttack}</div>
+                            <div></div>
                         </div>
                     </div>
 

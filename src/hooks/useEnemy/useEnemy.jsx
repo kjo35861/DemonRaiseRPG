@@ -1,24 +1,21 @@
-import { useRecoilState } from "recoil";
-import { getRandomMonster } from "../../utils/getRandomMonster";
-import { enemyState } from "../../recoil/atoms/enemyAtom";
-
+import { useEnemyStore } from "../../stores/useEnemyStore";
 
 function useEnemy() {
 
-    const [enemy, setEnemy] = useRecoilState(enemyState); 
+    const enemy = useEnemyStore((state) => state.enemy);
 
-    const damageEnemy = (damage) => {
-        setEnemy((prev) => ({
-            ...prev,
-            hp: Math.max(prev.hp - damage, 0),
-        }));
-    }
+    const setEnemy = useEnemyStore((state) => state.setEnemy);
+
+    const damageEnemy = useEnemyStore((state) => state.damageEnemy);
+
+    const clearEnemy = useEnemyStore((state) => state.clearEnemy);
 
     return {
         enemy,
         setEnemy,
         damageEnemy,
-    }
+        clearEnemy,
+    };
 }
 
 export default useEnemy;

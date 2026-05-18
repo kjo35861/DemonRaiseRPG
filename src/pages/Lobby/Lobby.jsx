@@ -10,14 +10,11 @@ import { useEffect } from "react";
 
 function Lobby() {
     const { moveToInventory, moveToBattle, moveToShop } = usePageMove();
-    const {player, setPlayer} = usePlayer();
+    const {player, restPlayer} = usePlayer();
 
 
     const handleClick = () => {
-        setPlayer(prev => ({
-            ...prev,
-            hp: prev.maxhp,
-        }))
+        restPlayer();
     }
 
 useEffect(() => {

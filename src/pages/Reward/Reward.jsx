@@ -11,18 +11,14 @@ import { useParams } from "react-router";
 function Reward() {
     const param = useParams();
     const { moveToLobby } = usePageMove();
-    const {player, setPlayer, rewardPlayerMoney, rewardPlayerSoul} = usePlayer();
-    const {enemy, setEnemy} = useEnemy();
+    const {player, rewardPlayerMoney, rewardPlayerSoul} = usePlayer();
+    const {enemy, clearEnemy} = useEnemy();
 
     const loseMoney = Math.floor(player.money * 5 / 100);
 
     const handleCheckOnClick = () => {
         moveToLobby();
-        setEnemy(getRandomMonster());
-        setPlayer(prev => ({
-            ...prev,
-            hp: player.maxhp * 0.2,
-        }))
+        clearEnemy();
     }
 
     useEffect(() => {

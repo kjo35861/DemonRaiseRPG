@@ -1,37 +1,38 @@
-import { useRecoilState } from "recoil";
-import { playerState } from "../../recoil/atoms/playerAtom";
+import { usePlayerStore } from "../../stores/usePlayerStore";
 import useEnemy from "../useEnemy/useEnemy";
 
 
 function usePlayer() {
-    
-    const [player, setPlayer] = useRecoilState(playerState);
-    const {enemy} = useEnemy();
+
+    const player = usePlayerStore();
+
+    const restPlayer = () => {
+        usePlayerStore.setState((state) => ({
+            hp: state.maxhp,
+        }))
+    }
 
     const damagePlayer = (damage) => {
-        setPlayer((prev) => ({
-            ...prev,
-            hp: Math.max(prev.hp - damage, 0)
+        usePlayerStore.setState((state) => ({
+            hp: Math.max(state.hp - damage, 0),
         }));
     }
 
     const rewardPlayerMoney = (reward) => {
-        setPlayer((prev) => ({
-            ...prev,
-            money: Math.max(player.money + reward, 0),
-        }))
+        usePlayerStore.setState((state) => ({
+            money: Math.max(state.money + reward, 0),
+        }));
     }
 
     const rewardPlayerSoul = (reward) => {
-        setPlayer((prev) => ({
-            ...prev,
-            souls: Math.max(player.souls + reward, 0),
-        }))
+        usePlayerStore.setState((state) => ({
+            souls: Math.max(state.souls + reward, 0),
+        }));
     }
 
     return {
         player,
-        setPlayer,
+        restPlayer,
         damagePlayer,
         rewardPlayerMoney,
         rewardPlayerSoul,
