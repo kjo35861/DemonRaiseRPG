@@ -1,60 +1,14 @@
-import usePageMove from "../../hooks/usePageMove/usePageMove";
 import * as s from "./styles";
-import { monsters } from "../../contents/monster";
-import { getRandomMonster } from "../../utils/getRandomMonster";
-import { useEffect, useState } from "react";
-import usePlayer from "../../hooks/usePlayer/usePlayer";
-import useEnemy from "../../hooks/useEnemy/useEnemy";
-import { calcFinalAttack } from "../../utils/calcFinalAttack";
+import useBattle from "../../hooks/useBattle/useBattle";
+import { stage } from "../../contents/stage";
 
 
 function Battle() {
-    const { moveToLobby, moveToReward } = usePageMove();
-
-    const { player, damagePlayer } = usePlayer();
-    const { enemy, setEnemy, damageEnemy } = useEnemy();
-
-    const finalAttack = calcFinalAttack(player);
-
-
-    const handleActionsOnClick = (e) => {
-        const actionButton = e.target.value;
-        if (actionButton === "attack") {
-            damageEnemy(finalAttack)
-        }
-
-        if (actionButton === "skills") {
-            damagePlayer(10);
-        }
-
-        if (actionButton === "action") {
-
-        }
-
-        if (actionButton === "escape") {
-            moveToLobby();
-        }
-    }
-
-    useEffect(() => {
-        if (!enemy) {
-            setEnemy(getRandomMonster())
-        }
-    }, [])
-
-    useEffect(() => {
-        if (player.hp === 0) {
-            moveToReward("lose");
-        }
-
-        if (enemy?.hp === 0) {
-            moveToReward("win");
-        }
-    }, [player.hp, enemy?.hp])
-
+    const {player, enemy, attackEnemy, useSkill, useAction, escapeBattle} = useBattle();
+    const stagebg = stage[0].bg;
     return (
         <>
-            <div css={s.layout}>
+            <div css={s.layout(stagebg)}>
                 <div css={s.toplayout}></div>
                 <div css={s.bottomlayout}>
                     <div css={s.user}>
@@ -66,10 +20,10 @@ function Battle() {
                     </div>
 
                     <div css={s.actionbuttons}>
-                        <button onClick={handleActionsOnClick} value={"attack"}>공격</button>
-                        <button onClick={handleActionsOnClick} value={"skills"}>스킬</button>
-                        <button onClick={handleActionsOnClick} value={"action"}>행동</button>
-                        <button onClick={handleActionsOnClick} value={"escape"}>도망</button>
+                        <button onClick={attackEnemy} value={"attack"}>공격</button>
+                        <button onClick={useSkill} value={"skills"}>스킬</button>
+                        <button onClick={useAction} value={"action"}>행동</button>
+                        <button onClick={escapeBattle} value={"escape"}>도망</button>
                     </div>
 
                     <div css={s.enemy}>

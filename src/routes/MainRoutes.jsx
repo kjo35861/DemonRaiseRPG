@@ -7,6 +7,7 @@ import Inventory from "../pages/Inventory/Inventory";
 import Shop from "../pages/Shop/Shop";
 import ErrorPage404 from "../pages/ErrorPage404/ErrorPage404";
 import Reward from "../pages/Reward/Reward";
+import StageSelect from "../pages/StageSelect/StageSelect";
 
 function MainRoutes() {
 
@@ -16,6 +17,7 @@ function MainRoutes() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/lobby" element={<Lobby />} />
+                <Route path="/stageselect" element={<StageSelect />} />
                 <Route path="/battle" element={<Battle />} />
                 <Route path="/reward/:result" element={<Reward />} />
                 <Route path="/inventory" element={<Inventory />} />

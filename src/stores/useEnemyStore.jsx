@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { enemy } from "../pages/Battle/styles";
+// import { enemy } from "../pages/Battle/styles";
 
 export const useEnemyStore = create((set) => ({
     
@@ -25,5 +25,5 @@ export const useEnemyStore = create((set) => ({
         set({
             enemy: null,
         })
-    }
+    },
 }))

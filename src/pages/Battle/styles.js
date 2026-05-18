@@ -2,11 +2,16 @@ import { css } from "@emotion/react";
 import { actionButton, actionController } from "../../assets/images";
 
 
-export const layout = css`
+export const layout = (stage) => css`
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    background-image: url(${stage});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 export const toplayout = css`
@@ -53,11 +58,11 @@ export const actionbuttons = css`
     width: 870px;
     height: 180px;
 
-        background-image: url(${actionController});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 90%;
-        filter: drop-shadow(0 0 5px #414141);
+    background-image: url(${actionController});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    filter: drop-shadow(0 0 5px #414141);
 
     & > button {
         font: inherit;

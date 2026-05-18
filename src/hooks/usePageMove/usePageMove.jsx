@@ -12,6 +12,12 @@ function usePageMove() {
         });
     };
 
+    const moveToStageSelect = () => {
+        navigate("/stageselect", {
+            replace: true,
+        });
+    };
+
     const moveToBattle = () => {
         if (player.hp > 0) {
             navigate("/battle", {
@@ -42,6 +48,7 @@ function usePageMove() {
 
     return {
         moveToLobby,
+        moveToStageSelect,
         moveToBattle,
         moveToInventory,
         moveToShop,

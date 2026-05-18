@@ -9,17 +9,17 @@ import { useEffect } from "react";
 
 
 function Lobby() {
-    const { moveToInventory, moveToBattle, moveToShop } = usePageMove();
-    const {player, restPlayer} = usePlayer();
+    const { moveToInventory, moveToStageSelect, moveToShop } = usePageMove();
+    const { player, restPlayer } = usePlayer();
 
 
     const handleClick = () => {
         restPlayer();
     }
 
-useEffect(() => {
-    
-}, [player])
+    useEffect(() => {
+
+    }, [player])
 
     return (
         <>
@@ -59,7 +59,7 @@ useEffect(() => {
                                 <span>벌</span>
                             </div>
                             <div css={s.buttonstopright}>
-                                <div css={s.battle} onClick={moveToBattle}>
+                                <div css={s.battle} onClick={moveToStageSelect}>
                                     <span>사</span>
                                     <span>냥</span>
                                 </div>
