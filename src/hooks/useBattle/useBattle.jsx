@@ -4,10 +4,12 @@ import usePageMove from "../usePageMove/usePageMove";
 import usePlayer from "../usePlayer/usePlayer";
 import { getRandomMonster } from "../../utils/getRandomMonster";
 import { calcFinalAttack } from "../../utils/calcFinalAttack";
+import useStageSelect from "../useStageSelect/useStageSelect";
 
 
 export function useBattle() {
     const { moveToLobby, moveToReward } = usePageMove();
+    const {selectstage} = useStageSelect();
     const { damagePlayer, player, } = usePlayer();
     const { enemy, setEnemy, damageEnemy, clearEnemy } = useEnemy();
 
@@ -15,7 +17,7 @@ export function useBattle() {
     useEffect(() => {
         if (!enemy) {
             setEnemy(
-                getRandomMonster(),
+                getRandomMonster(selectstage),
             );
         }
     }, []);

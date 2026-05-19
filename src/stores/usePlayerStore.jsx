@@ -12,6 +12,7 @@ export const usePlayerStore = create((set) => ({
     fame: 0,
 
     attack: 5,
+    skilldmg: 1,
     critchance: 0,
     critdamage: 1.2,
 
@@ -22,9 +23,11 @@ export const usePlayerStore = create((set) => ({
     int: 0,
     luk: 0,
 
+    lucky: 0,
     money: 0,
     souls: 0,
 
+    speed: 10,
     corruption: 0,
 
     inventory: [],

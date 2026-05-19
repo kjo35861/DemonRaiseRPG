@@ -69,7 +69,7 @@ function Lobby() {
                         </div>
                         <div css={s.buttonsbottom}>
                             <div css={s.shop}>상 점</div>
-                            <div css={s.rest} onClick={handleClick}>휴 식</div>
+                            <div css={s.skill} onClick={handleClick}>스킬트리</div>
                             <div css={s.quit}><ImExit /></div>
                         </div>
                     </div>

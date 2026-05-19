@@ -3,6 +3,7 @@ import { logoImg,
     classchangeImg, lordImg, battleImg, inventoryImg, shopImg, commonImg, 
     lobbyBG, 
     goldIcon, soulIcon,
+    skillImg,
 } from "../../assets/images/index.js";
 
 export const layout = css`
@@ -122,6 +123,7 @@ export const infolayout = css`
 export const infoList = css`
     display: flex;
     flex-direction: column;
+    align-items: baseline;
     border-top: 1px solid #dbdbdb;
     gap: 20px;
     margin: 0;
@@ -289,7 +291,7 @@ export const inventory = css`
 `
 export const shop = css`
     display: flex;
-    width: 600px;
+    width: 300px;
     height: 120px;
     justify-content: center;
     align-items: center;
@@ -311,8 +313,27 @@ export const shop = css`
     }
 `
 
-export const rest = css`
+export const skill = css`
+    display: flex;
+    width: 300px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
 
+    background-image: url(${skillImg});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    &:hover {
+        scale: 98%;
+    }
+    
+    &:active {
+        scale: 95%;
+        filter: brightness(0.7) drop-shadow(10px 8px 5px #000000);
+    }
 `
 
 export const quit = css`

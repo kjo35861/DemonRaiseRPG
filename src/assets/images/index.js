@@ -5,6 +5,7 @@ import classchangeImg from "./button/LordButton.png"
 import battleImg from "./button/BattleButton.png"
 import inventoryImg from "./button/InventoryButton.png"
 import shopImg from "./button/ShopButton.png"
+import skillImg from "./button/SkillButton.png"
 import commonImg from "./button/CommonButton.png"
 import longcommon from "./button/LongButton.png"
 
@@ -34,6 +35,7 @@ export {
     battleImg,
     inventoryImg,
     shopImg,
+    skillImg,
     commonImg,
     longcommon,
 
