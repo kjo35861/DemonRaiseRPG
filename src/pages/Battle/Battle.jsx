@@ -1,14 +1,16 @@
 import * as s from "./styles";
 import useBattle from "../../hooks/useBattle/useBattle";
 import { stage } from "../../contents/stage";
+import useStageSelect from "../../hooks/useStageSelect/useStageSelect";
 
 
 function Battle() {
     const {player, enemy, attackEnemy, useSkill, useAction, escapeBattle} = useBattle();
-    const stagebg = stage[0].bg;
+    const {selectstage} = useStageSelect();
+
     return (
         <>
-            <div css={s.layout(stagebg)}>
+            <div css={s.layout(stage[selectstage-1].bg)}>
                 <div css={s.toplayout}></div>
                 <div css={s.bottomlayout}>
                     <div css={s.user}>

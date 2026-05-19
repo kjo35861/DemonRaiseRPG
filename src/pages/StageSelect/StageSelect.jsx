@@ -14,6 +14,10 @@ function StageSelect() {
         moveToLobby();
     }
 
+    const handleCheckOnClick = () => {
+        moveToBattle();
+    }
+
     return (
         <>
             <div css={s.layout}>
@@ -35,7 +39,7 @@ function StageSelect() {
                             ))
                         }
                     </ul>
-                    <button css={s.check} >확 인</button>
+                    <button css={s.check} onClick={handleCheckOnClick} >확 인</button>
                 </div>
             </div>
         </>
