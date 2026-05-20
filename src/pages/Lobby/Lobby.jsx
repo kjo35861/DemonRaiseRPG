@@ -6,20 +6,20 @@ import usePageMove from "../../hooks/usePageMove/usePageMove";
 import usePlayer from "../../hooks/usePlayer/usePlayer";
 import PlayerInfos from "./InfoList/PlayerInfos";
 import { useEffect } from "react";
+import useStageSelect from "../../hooks/useStageSelect/useStageSelect";
 
 
 function Lobby() {
+    const { setStageSelect, setLevelSelect } = useStageSelect();
     const { moveToInventory, moveToStageSelect, moveToShop } = usePageMove();
     const { player, restPlayer } = usePlayer();
 
 
-    const handleClick = () => {
-        restPlayer();
-    }
-
     useEffect(() => {
-
-    }, [player])
+        restPlayer();
+        setStageSelect(1);
+        setLevelSelect(null);
+    }, [])
 
     return (
         <>
@@ -69,7 +69,7 @@ function Lobby() {
                         </div>
                         <div css={s.buttonsbottom}>
                             <div css={s.shop}>상 점</div>
-                            <div css={s.skill} onClick={handleClick}>스킬트리</div>
+                            <div css={s.skill}>스킬트리</div>
                             <div css={s.quit}><ImExit /></div>
                         </div>
                     </div>

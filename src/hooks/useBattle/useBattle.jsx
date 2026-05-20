@@ -41,6 +41,7 @@ export function useBattle() {
     };
 
     const useSkill = () => {
+        damagePlayer(10)
 
     };
 

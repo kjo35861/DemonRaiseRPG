@@ -2,16 +2,29 @@ import * as s from "./styles";
 import useBattle from "../../hooks/useBattle/useBattle";
 import { stage } from "../../contents/stage";
 import useStageSelect from "../../hooks/useStageSelect/useStageSelect";
+import { useEffect } from "react";
+import useEnemy from "../../hooks/useEnemy/useEnemy";
+import { userChr } from "../../assets/images/character";
 
 
 function Battle() {
-    const {player, enemy, attackEnemy, useSkill, useAction, escapeBattle} = useBattle();
+    const {player, attackEnemy, useSkill, useAction, escapeBattle} = useBattle();
     const {selectstage} = useStageSelect();
-
+    const {enemy} = useEnemy();
+    
+    
+    
     return (
         <>
             <div css={s.layout(stage[selectstage-1].bg)}>
-                <div css={s.toplayout}></div>
+                <div css={s.toplayout}>
+                    <div css={s.playerchr(userChr[player.class-1])}></div>
+                    {
+                        enemy && (
+                            <div css={s.enemychr(enemy.img)}></div>
+                        )
+                    }
+                </div>
                 <div css={s.bottomlayout}>
                     <div css={s.user}>
                         {player.username}

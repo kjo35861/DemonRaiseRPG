@@ -39,11 +39,21 @@ function PlayerInfos() {
         },
         {
             label: (<><GiBouncingSword />크리티컬 확률</>),
-            value: player.critchance + "%",
+            value: player.critchance + " %",
+            detail: (
+                <>
+                    <GiBouncingSword /> 최대 75%
+                </>
+            ),
         },
         {
             label: (<><GiPointySword />크리티컬 데미지</>),
             value: "x " + player.critdamage,
+            detail: (
+                <>
+                    <GiPointySword /> 최대 x3
+                </>
+            ),
         },
         {
             label: (<><TbShoe /> 스피드</>),

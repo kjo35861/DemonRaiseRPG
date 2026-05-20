@@ -3,6 +3,7 @@ import { create } from "zustand";
 export const usePlayerStore = create((set) => ({
     
     username: "user",
+    class: 1,
     hp: 50,
     maxhp: 50,
 

@@ -19,13 +19,10 @@ function usePageMove() {
     };
 
     const moveToBattle = () => {
-        if (player.hp > 0) {
-            navigate("/battle", {
-                replace: true,
-            });
-        } else {
-            alert("체력이 0입니다.")
-        }
+        navigate("/battle", {
+            replace: true,
+        });
+
     }
 
     const moveToInventory = () => {

@@ -8,6 +8,8 @@ import shopImg from "./button/ShopButton.png"
 import skillImg from "./button/SkillButton.png"
 import commonImg from "./button/CommonButton.png"
 import longcommon from "./button/LongButton.png"
+import turnView from "./button/TurnView.png"
+import roundView from "./button/RoundView.png"
 
 import hellStone from "./background/HellStone.png"
 import lobbyBG from "./background/LobbyBackground.png"
@@ -26,6 +28,7 @@ import soulIcon from "./icon/SoulIcon.png"
 import actionController from "./button/ActionController.png"
 import actionButton from "./button/ActionButton.png"
 
+import * as p from "./character"
 
 export {
     logoImg,
@@ -38,6 +41,8 @@ export {
     skillImg,
     commonImg,
     longcommon,
+    turnView,
+    roundView,
 
     hellStone,
     lobbyBG,

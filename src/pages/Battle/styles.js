@@ -15,9 +15,38 @@ export const layout = (stage) => css`
 `
 
 export const toplayout = css`
-    flex-grow: 1;
-    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 180px;
+    width: 1780px;
+    height: 580px;
 `
+
+export const playerchr = (img) => css`
+    width: 300px;
+    height: 400px;
+
+    background-image: ${img ? `url(${img})` : "none"};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: drop-shadow(-8px 8px 10px #72727266);
+`
+
+export const enemychr = (img) => css`
+    width: 400px;
+    height: 400px;
+
+    background-image: ${img ? `url(${img})` : "none"};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: drop-shadow(8px 8px 10px #57575744);
+`
+
 
 export const bottomlayout = css`
     display: flex;

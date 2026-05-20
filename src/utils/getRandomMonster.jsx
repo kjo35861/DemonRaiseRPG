@@ -6,6 +6,8 @@ import {stage5Monsters} from "../contents/monsters/stage5Monsters";
 import {stage6Monsters} from "../contents/monsters/stage6Monsters";
 import {stage7Monsters} from "../contents/monsters/stage7Monsters";
 import {stage8Monsters} from "../contents/monsters/stage8Monsters";
+import useEnemy from "../hooks/useEnemy/useEnemy";
+
 
 
 export function getRandomMonster(stage) {
@@ -24,11 +26,13 @@ export function getRandomMonster(stage) {
 
     const monsters = allStage[stage]
 
-    if (!monsters) return null;
+    if (!monsters) return;
 
     const randomIndex = Math.floor(
         Math.random() * stage1Monsters.length
     );
+
+    
     return {
         ...monsters[randomIndex]
     }
