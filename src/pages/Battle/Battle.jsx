@@ -8,22 +8,26 @@ import { userChr } from "../../assets/images/character";
 
 
 function Battle() {
-    const {player, attackEnemy, useSkill, useAction, escapeBattle} = useBattle();
-    const {selectstage} = useStageSelect();
-    const {enemy} = useEnemy();
-    
-    
-    
+    const { player, attackEnemy, useSkill, useAction, escapeBattle } = useBattle();
+    const { selectstage } = useStageSelect();
+    const { enemy } = useEnemy();
+
+
+
     return (
         <>
-            <div css={s.layout(stage[selectstage-1].bg)}>
+            <div css={s.layout(stage[selectstage - 1].bg)}>
                 <div css={s.toplayout}>
-                    <div css={s.playerchr(userChr[player.class-1])}></div>
-                    {
-                        enemy && (
-                            <div css={s.enemychr(enemy.img)}></div>
-                        )
-                    }
+                    <div css={s.round}></div>
+                    <div css={s.ChrEne}>
+                        <div css={s.playerchr(userChr[player.class - 1])}></div>
+                        <div css={s.turn}></div>
+                        {
+                            enemy && (
+                                <div css={s.enemychr(enemy.img)}></div>
+                            )
+                        }
+                    </div>
                 </div>
                 <div css={s.bottomlayout}>
                     <div css={s.user}>

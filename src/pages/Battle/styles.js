@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { actionButton, actionController } from "../../assets/images";
+import { actionButton, actionController, roundView, turnView } from "../../assets/images";
 
 
 export const layout = (stage) => css`
@@ -16,21 +16,52 @@ export const layout = (stage) => css`
 
 export const toplayout = css`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 0 180px;
     width: 1780px;
-    height: 580px;
+    height: 600px;
+`
+
+export const round = css`
+    width: 800px;
+    height: 100px;
+
+    background-image: url(${roundView});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
+export const turn = css`
+    position: relative;
+    width: 300px;
+    height: 100px;
+
+    background-image: url(${turnView});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
+export const ChrEne = css`
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    padding: 0 120px;
 `
 
 export const playerchr = (img) => css`
-    width: 300px;
+    width: 400px;
     height: 400px;
+    margin-bottom: 80px;
 
     background-image: ${img ? `url(${img})` : "none"};
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    
 
     filter: drop-shadow(-8px 8px 10px #72727266);
 `
@@ -38,6 +69,7 @@ export const playerchr = (img) => css`
 export const enemychr = (img) => css`
     width: 400px;
     height: 400px;
+    margin-bottom: 80px;
 
     background-image: ${img ? `url(${img})` : "none"};
     background-position: center;
