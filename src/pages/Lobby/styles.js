@@ -217,6 +217,7 @@ export const classchange = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -248,6 +249,7 @@ export const lord = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -273,6 +275,7 @@ export const battle = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -297,6 +300,7 @@ export const inventory = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -320,6 +324,7 @@ export const shop = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -344,6 +349,7 @@ export const skill = css`
 
     &:hover {
         scale: 98%;
+        filter: brightness(0.9) drop-shadow(10px 8px 5px #000000);
     }
     
     &:active {
@@ -422,6 +428,16 @@ export const skillpoint = css`
     height: 40px;
     background-color: #ff64;
     border: 2px solid #ff6b4a3d;
+
+    &:hover {
+        scale: 98%;
+        filter: brightness(0.9);
+    }
+    
+    &:active {
+        scale: 95%;
+        filter: brightness(0.7);
+    }
 `
 export const remaining = css`
     position: absolute;
