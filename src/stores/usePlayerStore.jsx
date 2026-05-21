@@ -11,6 +11,7 @@ export const usePlayerStore = create((set) => ({
     xp: 0,
     needxp: 10,
     fame: 0,
+    skillpoints: 1,
 
     attack: 5,
     skilldmg: 1,

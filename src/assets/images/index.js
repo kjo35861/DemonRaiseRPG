@@ -24,6 +24,8 @@ import Stage8BG from "./background/Stage8BG.png"
 
 import goldIcon from "./icon/GoldIcon.png"
 import soulIcon from "./icon/SoulIcon.png"
+import xpIcon from "./icon/XpIcon.png"
+import fameIcon from "./icon/FameIcon.png"
 
 import actionController from "./button/ActionController.png"
 import actionButton from "./button/ActionButton.png"
@@ -57,6 +59,8 @@ export {
 
     goldIcon,
     soulIcon,
+    xpIcon,
+    fameIcon,
 
     actionButton,
     actionController,

@@ -17,9 +17,9 @@ export const stage1Monsters = [
         img: i.stg1_1,
 
         reward: {
-            xp: 2,
+            xp: 3,
             fame: 0,
-            money: 1,
+            money: 2,
             souls: 0,
         },
     },
@@ -38,9 +38,9 @@ export const stage1Monsters = [
         img: i.stg1_2,
 
         reward: {
-            xp: 3,
+            xp: 4,
             fame: 0,
-            money: 1,
+            money: 2,
             souls: 0,
         },
     },
@@ -59,9 +59,9 @@ export const stage1Monsters = [
         img: i.stg1_3,
 
         reward: {
-            xp: 4,
+            xp: 5,
             fame: 0,
-            money: 1,
+            money: 2,
             souls: 0,
         },
     },
@@ -80,9 +80,9 @@ export const stage1Monsters = [
         img: i.stg1_4,
 
         reward: {
-            xp: 4,
+            xp: 5,
             fame: 1,
-            money: 2,
+            money: 3,
             souls: 0,
         },
     },
@@ -101,9 +101,9 @@ export const stage1Monsters = [
         img: i.stg1_5,
 
         reward: {
-            xp: 6,
+            xp: 7,
             fame: 1,
-            money: 3,
+            money: 4,
             souls: 1,
         },
     },
@@ -122,9 +122,9 @@ export const stage1Monsters = [
         img: i.stg1_6,
 
         reward: {
-            xp: 4,
+            xp: 5,
             fame: 0,
-            money: 2,
+            money: 3,
             souls: 0,
         },
     },
@@ -143,9 +143,9 @@ export const stage1Monsters = [
         img: i.stg1_7,
 
         reward: {
-            xp: 5,
+            xp: 6,
             fame: 1,
-            money: 2,
+            money: 3,
             souls: 0,
         },
     },
@@ -164,9 +164,9 @@ export const stage1Monsters = [
         img: i.stg1_8,
 
         reward: {
-            xp: 8,
+            xp: 9,
             fame: 2,
-            money: 4,
+            money: 5,
             souls: 1,
         },
     },

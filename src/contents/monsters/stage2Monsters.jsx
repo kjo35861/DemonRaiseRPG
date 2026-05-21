@@ -1,5 +1,6 @@
 import * as i from "../../assets/images/monster/stage2/index";
 
+
 export const stage2Monsters = [
 
     {
@@ -15,9 +16,9 @@ export const stage2Monsters = [
         img: i.stg2_1,
 
         reward: {
-            xp: 5,
+            xp: 7,
             fame: 1,
-            money: 3,
+            money: 4,
             souls: 0,
         },
     },
@@ -35,9 +36,9 @@ export const stage2Monsters = [
         img: i.stg2_2,
 
         reward: {
-            xp: 6,
+            xp: 8,
             fame: 1,
-            money: 3,
+            money: 4,
             souls: 0,
         },
     },
@@ -55,9 +56,9 @@ export const stage2Monsters = [
         img: i.stg2_3,
 
         reward: {
-            xp: 7,
+            xp: 8,
             fame: 1,
-            money: 4,
+            money: 5,
             souls: 0,
         },
     },
@@ -75,9 +76,9 @@ export const stage2Monsters = [
         img: i.stg2_4,
 
         reward: {
-            xp: 8,
+            xp: 9,
             fame: 1,
-            money: 4,
+            money: 5,
             souls: 0,
         },
     },
@@ -117,7 +118,7 @@ export const stage2Monsters = [
         reward: {
             xp: 10,
             fame: 2,
-            money: 4,
+            money: 5,
             souls: 0,
         },
     },
@@ -135,9 +136,9 @@ export const stage2Monsters = [
         img: i.stg2_7,
 
         reward: {
-            xp: 11,
+            xp: 10,
             fame: 2,
-            money: 5,
+            money: 6,
             souls: 0,
         },
     },
@@ -155,13 +156,12 @@ export const stage2Monsters = [
         img: i.stg2_8,
 
         reward: {
-            xp: 13,
+            xp: 12,
             fame: 3,
-            money: 6,
+            money: 7,
             souls: 1,
         },
     },
-
     {
         id: 109,
         name: "용암 심장 수호자",

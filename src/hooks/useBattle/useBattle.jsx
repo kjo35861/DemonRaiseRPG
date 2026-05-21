@@ -5,11 +5,12 @@ import usePlayer from "../usePlayer/usePlayer";
 import { getRandomMonster } from "../../utils/getRandomMonster";
 import { calcFinalAttack } from "../../utils/calcFinalAttack";
 import useStageSelect from "../useStageSelect/useStageSelect";
+import { useStage } from "../../stores/useStageStore";
 
 
 export function useBattle() {
     const { moveToLobby, moveToReward } = usePageMove();
-    const {selectstage} = useStageSelect();
+    const {selectstage, nextRound, clearRound, nextTurn, clearTurn} = useStageSelect();
     const { damagePlayer, player, } = usePlayer();
     const { enemy, setEnemy, damageEnemy, clearEnemy } = useEnemy();
 
@@ -46,10 +47,13 @@ export function useBattle() {
     };
 
     const useAction = () => {
-        
+        nextRound();
+        nextTurn();
     };
 
     const escapeBattle = () => {
+        clearRound();
+        clearTurn();
         clearEnemy();
         moveToLobby();
 

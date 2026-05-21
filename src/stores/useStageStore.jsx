@@ -3,7 +3,8 @@ import { create } from "zustand";
 export const useStage = create((set) => ({
 
     selectstage: 1,
-    selectlevel: null,
+    nowround: 1,
+    nowturn: 1,
 
 
     setSelectStg: (value) => {
@@ -21,7 +22,32 @@ export const useStage = create((set) => ({
     clearSelect: () => {
         set({
             selectstage: 1,
-            selectlevel: null,
+            nowround: 0,
         })
+    },
+
+
+    nextRound: () => {
+        set((state) => ({
+            nowround: state.nowround + 1,
+        }))
+    },
+
+    clearRound: () => {
+        set({
+            nowround: 0,
+        })
+    },
+
+    nextTurn: () => {
+        set((state) => ({
+            nowturn: state.nowturn + 1,
+        }))
+    },
+
+    clearTurn: () => {
+        set((state) => ({
+            nowturn: 0,
+        }))
     },
 }))

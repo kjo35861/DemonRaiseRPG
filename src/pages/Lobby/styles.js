@@ -120,6 +120,21 @@ export const infolayout = css`
     
 `
 
+export const infotitleline = css`
+    display: flex;
+    justify-content: space-between;
+
+    & .subinfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 540px;
+        height: 45px;
+        gap: 10px;
+        font-size: 40px;
+    }
+`
+
 export const infoList = css`
     display: flex;
     flex-direction: column;
@@ -325,6 +340,7 @@ export const skill = css`
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    filter: drop-shadow(10px 8px 5px #000000);
 
     &:hover {
         scale: 98%;
@@ -364,3 +380,62 @@ export const quit = css`
     }
 `
 
+export const tip = css`
+    position: relative;
+
+    &::after {
+        content: attr(data-tooltip);
+
+        position: absolute;
+        display: flex;
+
+        padding: 8px 12px;
+        border-radius: 8px;
+        width: 500px;
+        height: 400px;
+
+        background-color: #3b3b3b;
+        color: white;
+        box-shadow: inset 0 0 20px #dbdbdb77;
+
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all 0.2s ease-in-out;
+
+        font-size: 20px;
+    }
+
+    &:hover::after {
+        opacity: 0.9;
+        visibility: visible;
+    }
+`
+
+export const skillpoint = css`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ff64;
+    border: 2px solid #ff6b4a3d;
+`
+export const remaining = css`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    top: -25%;
+    right: -25%;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    box-shadow: inset 0 0 5px #dbdbdb;
+    font-size: 24px;
+    color: #dbdbdb;
+`

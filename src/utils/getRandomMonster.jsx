@@ -29,7 +29,7 @@ export function getRandomMonster(stage) {
     if (!monsters) return;
 
     const randomIndex = Math.floor(
-        Math.random() * stage1Monsters.length
+        Math.random() * 8
     );
 
     

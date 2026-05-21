@@ -17,26 +17,129 @@ export const layout = (stage) => css`
 export const toplayout = css`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 1780px;
     height: 600px;
 `
 
+export const topcenter = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: 650px;
+`
+
 export const round = css`
-    width: 800px;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    gap: 15px;
+    width: 600px;
+    height: 200px;
+
+    font-size: 25px;
 
     background-image: url(${roundView});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+
+    & .roundtop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: content-box;
+        padding-bottom: 20px;
+        width: 470px;
+        height: 40px;
+
+        & > div > span {
+            width: 60px;
+            overflow-x: hidden;
+        }
+
+        & .gold {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+        }
+
+        & .soul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    & .roundbottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: content-box;
+        width: 450px;
+        height: 40px;
+
+        & > div > span {
+            width: 80px;
+            overflow-x: hidden;
+        }
+
+        & .xp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+        }
+
+        & .fame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+        }
+    }
 `
 
 export const turn = css`
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     width: 300px;
     height: 100px;
+
+    font-size: 20px;
 
     background-image: url(${turnView});
     background-position: center;
@@ -55,7 +158,7 @@ export const ChrEne = css`
 export const playerchr = (img) => css`
     width: 400px;
     height: 400px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 
     background-image: ${img ? `url(${img})` : "none"};
     background-position: center;
@@ -69,7 +172,8 @@ export const playerchr = (img) => css`
 export const enemychr = (img) => css`
     width: 400px;
     height: 400px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
+
 
     background-image: ${img ? `url(${img})` : "none"};
     background-position: center;
@@ -83,7 +187,7 @@ export const enemychr = (img) => css`
 export const bottomlayout = css`
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     height: 200px;
     gap: 5px;
     background-color: #00000000;
